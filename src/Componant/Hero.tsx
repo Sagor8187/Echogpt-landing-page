@@ -91,20 +91,18 @@ const Hero = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            <div className="relative w-full max-w-lg aspect-square">
+           <div className="relative w-full max-w-lg aspect-square">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#10a37f]/20 to-transparent dark:from-[#CEF144]/15 dark:to-transparent rounded-3xl transform rotate-3"></div>
-              <div className="absolute inset-0 bg-gray-50 dark:bg-[#151a23] rounded-3xl shadow-xl border border-gray-200 dark:border-white/10 flex items-center justify-center overflow-hidden transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+              
+              {/* Main Container Box */}
+              <div className="absolute inset-0 bg-gray-950 dark:bg-gray-950 rounded-3xl shadow-xl border border-gray-200 dark:border-white/10 overflow-hidden transform -rotate-2 hover:rotate-0 transition-transform duration-500">
                 
-                {/* Placeholder Content */}
-                <div className="text-center p-8">
-                <Image 
-                    src="/ecogpt.png"  
-                    alt="EchoGPT AI Dashboard Preview" 
-                    fill 
-                    className="object-scale-down rounded-3xl"
-                    priority
+                {/* SVG / Image perfectly stretched to fill the container */}
+                <img 
+                  src="/ecogpts.svg" 
+                  alt="EchoGPT Illustration" 
+                  className="w-full h-full object-cover rounded-3xl" 
                 />
-                </div>
 
               </div>
             </div>
