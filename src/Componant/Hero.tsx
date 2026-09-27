@@ -59,23 +59,23 @@ const Hero = () => {
              
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4"
             >
-              <Link href="#get-started" className="w-full sm:w-auto">
+              <Link href="https://echogpt-ecosystem-ui.vercel.app/" target="_blank" className="w-full sm:w-auto">
                 <motion.button 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full bg-[#10a37f] text-white hover:bg-[#0e906f] dark:bg-[#CEF144] dark:text-[#0B0F15] dark:hover:bg-[#bce038] px-8 py-3.5 rounded-md text-base font-bold shadow-lg transition-colors"
                 >
-                  Start for Free
+                  Try EchoGPT Now
                 </motion.button>
               </Link>
               
-              <Link href="#demo" className="w-full sm:w-auto">
+              <Link href="#testimonials" className="w-full sm:w-auto">
                 <motion.button 
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full px-8 py-3.5 rounded-md text-base font-bold text-gray-800 border-2 border-gray-300 hover:border-gray-900 dark:text-white dark:border-white/20 dark:hover:border-[#CEF144] dark:hover:text-[#CEF144] transition-colors"
                 >
-                  Book a Demo
+                  See Review
                 </motion.button>
               </Link>
             </motion.div>
