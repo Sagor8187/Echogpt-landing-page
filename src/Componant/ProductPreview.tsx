@@ -9,7 +9,6 @@ const previewTabs = [
   { id: "dashboard", label: "AI Dashboard", image: "/dashboard.png" },
   { id: "analytics", label: "Real-time Analytics", image: "/analyzer.png" },
   { id: "store", label: "Plugin", image: "/store.png" },
- 
 ];
 
 const ProductPreview = () => {
@@ -25,8 +24,16 @@ const ProductPreview = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
+        {/* Section Header with Scroll Animation */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          // whileInView triggers animation when the element scrolls into the viewport
+          whileInView={{ opacity: 1, y: 0 }}
+          // once: true ensures it animates only the first time it comes into view
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="text-center max-w-3xl mx-auto space-y-4 mb-12"
+        >
           <h2 className="text-xs uppercase tracking-widest text-[#10a37f] dark:text-[#CEF144] font-bold">
             Product Preview
           </h2>
@@ -36,10 +43,16 @@ const ProductPreview = () => {
           <p className="text-base md:text-lg text-gray-600 dark:text-gray-400">
             Explore our sleek, high-performance dashboard and intuitive interfaces designed to maximize your productivity.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Tab Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        {/* Tab Buttons with Scroll Animation */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          className="flex flex-wrap justify-center gap-3 mb-10"
+        >
           {previewTabs.map((tab) => (
             <button
               key={tab.id}
@@ -53,13 +66,14 @@ const ProductPreview = () => {
               {tab.label}
             </button>
           ))}
-        </div>
+        </motion.div>
 
-        {/* Screenshot Frame Container */}
+        {/* Screenshot Frame Container with Scroll Animation */}
         <motion.div 
-          key={activeTab}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          key={activeTab} // Key forces re-animation when tab changes
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }} // Combines fade, slide, and scale up
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="relative max-w-5xl mx-auto rounded-3xl p-3 bg-gray-100 dark:bg-[#151a23] border border-gray-200 dark:border-white/10 shadow-2xl overflow-hidden"
         >

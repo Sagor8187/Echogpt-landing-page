@@ -26,20 +26,23 @@ const Hero = () => {
           <motion.div 
             className="w-full lg:w-1/2 text-center lg:text-left space-y-6"
             initial="hidden"
-            animate="visible"
+            // Changed from 'animate' to 'whileInView' for scroll animation
+            whileInView="visible"
+            // Trigger animation once when 20% of the element is in view
+            viewport={{ once: true, amount: 0.2 }}
             variants={{
               visible: { transition: { staggerChildren: 0.2 } }
             }}
           >
             {/* Badge / Pill */}
-            <motion.div  className="inline-block px-4 py-1.5 rounded-full border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 text-sm font-medium text-gray-600 dark:text-gray-300">
+            <motion.div variants={{fadeUpVariant}} className="inline-block px-4 py-1.5 rounded-full border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 text-sm font-medium text-gray-600 dark:text-gray-300">
               <span className="text-[#10a37f] dark:text-[#CEF144] font-bold">New:</span> The ultimate AI automation quality
             </motion.div>
             
             {/* Main Headline */}
             <motion.h1 
               id="hero-heading"
-            
+              variants={{fadeUpVariant}}
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight"
             >
               The Fastest Way to <br className="hidden md:block" />
@@ -48,7 +51,7 @@ const Hero = () => {
             
             {/* Description */}
             <motion.p 
-            
+              variants={{fadeUpVariant}}
               className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto lg:mx-0"
             >
               Experience unparalleled AI quality. EchoGPT is built for modern teams to automate operations, close deals faster, and generate high-precision outcomes with unmatched speed and reliability.
@@ -56,7 +59,7 @@ const Hero = () => {
             
             {/* Buttons */}
             <motion.div 
-             
+              variants={{fadeUpVariant}}
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4"
             >
               <Link href="https://echogpt-ecosystem-ui.vercel.app/" target="_blank" className="w-full sm:w-auto">
@@ -79,19 +82,19 @@ const Hero = () => {
                 </motion.button>
               </Link>
             </motion.div>
-
-            {/* Trust Indicators */}
-          
           </motion.div>
 
           {/* Visual Element - Right Side */}
           <motion.div 
             className="w-full lg:w-1/2 flex justify-center lg:justify-end relative"
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            // Changed from 'animate' to 'whileInView' for scroll animation
+            whileInView={{ opacity: 1, scale: 1 }}
+            // Trigger animation once when 20% of the element is in view
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-           <div className="relative w-full max-w-lg aspect-square">
+            <div className="relative w-full max-w-lg aspect-square">
               <div className="absolute inset-0 bg-gradient-to-tr from-[#10a37f]/20 to-transparent dark:from-[#CEF144]/15 dark:to-transparent rounded-3xl transform rotate-3"></div>
               
               {/* Main Container Box */}
